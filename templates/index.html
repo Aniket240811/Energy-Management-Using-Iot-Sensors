@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Energy Management</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="C:\Users\Aniket Annam\Desktop\Data Science\Deployement\static\styles.css"> -->
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'styles.css')}}">
+  </head>
+  <body>
+    <h1 class="display-5">Energy Management</h1> <br><br>
+
+    <div class="container mb-3">
+      <form class="" action="{{url_for("prediction")}}" method="post">
+        <!-- running chain Motors Input -->
+          <label for="RCM">Enter Energy Input of Running Chain Motors : </label>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&emsp;&nbsp;&nbsp;
+            <input step="0.00000000001" type="number" name="RCM" placeholder="Enter RCM Value"><br><br>
+        <!-- cooling water terminal motors -->
+          <label for="CWT">Enter Energy Input of Cooling Water Terminal Motors : </label>&emsp;&emsp;&emsp;
+          <input type="number" name="CWT" step="0.00000000001" , placeholder="Enter CWT Value"><br><br>
+
+        <!-- carbonate gas line -->
+          <label for="M10HP3"> Enter Energy Input of Carbonate Gas Line Motor : </label>&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&nbsp;
+          <input type="number" name="M10HP3" step="0.00000000001" , placeholder="Enter M10HP3 Value"><br><br>
+
+        <!-- Bottle Capping Unit  -->
+          <label for="M11HP3">Enter Energy Input of Bottle Capping Unit Motor : </label>&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;
+          <input type="number" name="M11Hp3" step="0.00000000001" placeholder="Enter M11HP3 Value"><br><br>
+
+        <!-- Soft Drink Filler Machine -->
+          <label for="M12HP7">Enter Enrgy Input Of Soft Drink Filler Machine :</label>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&emsp;
+          <input type="number" name="M12HP7" step="0.00000000001" placeholder="Enter M12HP7 Value"><br><br>
+
+        <!-- Electrical Glass Bottle Washer -->
+          <label for="M13HP19">Enter Energy input of Electrical Glass Bottle Washer Motor : </label>&nbsp;&nbsp;&nbsp;
+          <input type="number" name="M13HP19" step="0.00000000001" placeholder="Enter M13HP19 Value"><br><br>
+
+        <!-- Firewood Boiler  -->
+          <label for="FWB">Enter Energy Input of Firewood Boiler : </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+          <input type="number" name="FWB" step="0.00000000001" placeholder="Enter FWB Value"><br><br>
+
+        <!-- Bottle Batch Coding Machine  -->
+          <label for="BBCM">Enter Energy Input of Bottle Batch Coding Machine: </label>&emsp;&emsp;&emsp;&nbsp;&emsp;
+          <input type="number" name="BBCM" step="0.00000000001" placeholder="Enter BBCM Value"><br><br>
+
+        <!-- other consumption -->
+          <label for="OC">Enter Other consumptions of Motor</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+          <input type="number" name="OC" step="0.00000000001" placeholder="Enter OC Value"><br><br>
+
+          <!-- button -->
+            <button type="submit" class="btn btn-outline-primary btn-lg">Predict</button>
+            <h1 class="navbar-brand">{{ output }}</h1>
+
+      </form>
+
+    </div>
+  </body>
+</html>

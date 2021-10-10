@@ -1,0 +1,18 @@
+h1{
+  font-size: 100px;
+  margin-left: 35%;
+}
+
+input{
+  text-align: center;
+  display:inline-block;
+  background-color: #B5DEFF;
+}
+
+label{
+  font-weight: bold;
+}
+
+body{
+  background-color: #D7E9F7;
+}
