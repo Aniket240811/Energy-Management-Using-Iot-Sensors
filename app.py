@@ -18,7 +18,7 @@ def prediction():
     final_features = [np.array(final_features)]
     prediction = model.predict(final_features)
 
-    return render_template('index.html', output='Prediction Of Energy consumption is {}'.format(prediction))
+    return render_template('index.html', output='Overall Energy Consumption is {}'.format(prediction))
 
 if __name__ == "__main__":
     app.run(debug=True)
