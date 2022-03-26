@@ -1,6 +1,7 @@
 # flask app
 # importing libraries
 import numpy as np
+from collections.abc import Mapping
 from flask import Flask, request, jsonify, render_template
 import pickle
 
